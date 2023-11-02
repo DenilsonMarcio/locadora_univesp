@@ -30,4 +30,8 @@ public class UserModel implements Serializable{
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    public UserModel() {
+
+    }
 }

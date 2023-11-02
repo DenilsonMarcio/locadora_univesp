@@ -35,5 +35,8 @@ public class TaskModel implements Serializable {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-    
+
+    public TaskModel() {
+
+    }
 }

@@ -1,5 +1,6 @@
 package br.com.moppahtech.todolist.service;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import br.com.moppahtech.todolist.enums.Priority;
@@ -13,14 +14,14 @@ public class TaskService {
 
     private final TaskRepository repository;
 
-    public TaskModel createTask(TaskModel taskModel) {
+    public TaskModel createTask(@NotNull TaskModel taskModel) {
         
         taskModel.setPriority(getPriorityTask(taskModel.getPriority()));
         
         return repository.save(taskModel);
     }
 
-    private String getPriorityTask(String priority) {
+    private String getPriorityTask(@NotNull String priority) {
         if(priority.equals("0")){
             return Priority.NIVEL_0.getValue();
         }

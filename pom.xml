@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.moppahtech</groupId>
-	<artifactId>todolist</artifactId>
+	<artifactId>locadora</artifactId>
 	<version>1.0.0</version>
-	<name>listadetarefas</name>
-	<description>Lista de Tarefas</description>
+	<name>locadora_univesp</name>
+	<description>Projeto Locadora VHS</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

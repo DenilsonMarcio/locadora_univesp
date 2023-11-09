@@ -1,4 +1,4 @@
-package br.com.moppahtech.todolist.enums;
+package br.com.moppahtech.locadora.enums;
 
 public enum Priority {
     NIVEL_0 ("ALTA"),

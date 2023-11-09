@@ -1,13 +1,13 @@
-package br.com.moppahtech.todolist;
+package br.com.moppahtech.locadora;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ListadetarefasApplication {
+public class LocadoraApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ListadetarefasApplication.class, args);
+		SpringApplication.run(LocadoraApplication.class, args);
 	}
 
 }

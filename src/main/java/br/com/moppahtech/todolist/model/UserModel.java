@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Entity;
@@ -18,6 +20,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "tb_user")
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserModel implements Serializable{
     
     @Id
@@ -30,8 +34,4 @@ public class UserModel implements Serializable{
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-
-    public UserModel() {
-
-    }
 }

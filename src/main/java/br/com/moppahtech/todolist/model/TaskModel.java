@@ -18,6 +18,8 @@ import lombok.*;
 @Data
 @Entity
 @Table(name = "tb_task")
+@NoArgsConstructor
+@AllArgsConstructor
 public class TaskModel implements Serializable {
 
     @Id
@@ -36,7 +38,4 @@ public class TaskModel implements Serializable {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    public TaskModel() {
-
-    }
 }

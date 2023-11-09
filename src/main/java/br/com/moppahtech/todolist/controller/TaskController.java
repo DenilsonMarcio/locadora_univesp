@@ -2,10 +2,7 @@ package br.com.moppahtech.todolist.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import br.com.moppahtech.todolist.model.TaskModel;
 import br.com.moppahtech.todolist.service.TaskService;
@@ -22,6 +19,11 @@ public class TaskController {
     public ResponseEntity<TaskModel> create (@RequestBody TaskModel taskModel){
         TaskModel taskCreated = service.createTask(taskModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(taskCreated);
+    }
+
+    @GetMapping()
+    public ResponseEntity<String> testController(){
+        return ResponseEntity.status(HttpStatus.OK).body("Hello Univesp Path Task!!!");
     }
     
 }

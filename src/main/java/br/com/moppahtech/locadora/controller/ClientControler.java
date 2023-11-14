@@ -26,9 +26,15 @@ public class ClientControler {
 
     @PutMapping("/client")
     public ResponseEntity<?> alteraCliente(@RequestBody ClientModel clientModel){
-
         return clientService.upDateClient(clientModel);
     }
+
+    @DeleteMapping("client/{id}")
+    public ResponseEntity<?> excluiCliente(@PathVariable UUID id){
+        return clientService.deleteClient(id);
+
+    }
+
 
     @PostMapping("/client")
     public ResponseEntity<?> cadastraCliente(@RequestBody ClientModel clientModel){

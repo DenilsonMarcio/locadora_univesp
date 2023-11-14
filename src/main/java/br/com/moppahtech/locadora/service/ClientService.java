@@ -20,16 +20,21 @@ public class ClientService {
     }
 
     public ResponseEntity<?> getClientById(UUID id){
-        return new ResponseEntity<>(clientRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(clientRepository.findById(id), HttpStatus.FOUND);
     }
 
     public ResponseEntity<?> upDateClient(ClientModel clientModel){
-        return new ResponseEntity<>(clientRepository.save(clientModel));
+        return new ResponseEntity<>(clientRepository.save(clientModel),HttpStatus.OK);
     }
 
     public ResponseEntity<?> createClient(ClientModel clientModel){
 
         return new ResponseEntity<>(clientRepository.save(clientModel), HttpStatus.CREATED) ;
+    }
+
+    public ResponseEntity<?> deleteClient(UUID id){
+        clientRepository.deleteById(id);
+       return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 }

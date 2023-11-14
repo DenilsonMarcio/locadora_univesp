@@ -35,6 +35,7 @@ public class ClientService {
     public ResponseEntity<?> deleteClient(UUID id){
         clientRepository.deleteById(id);
        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+
     }
 
 }

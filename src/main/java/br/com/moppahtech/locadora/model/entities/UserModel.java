@@ -14,6 +14,9 @@ public class UserModel extends PersonModel {
 
     private String password;
 
+    public UserModel() {
+    }
+
     public UserModel(String login, String password) {
         this.login = login;
         this.password = password;

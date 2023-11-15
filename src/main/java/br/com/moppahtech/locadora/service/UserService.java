@@ -1,38 +1,39 @@
 package br.com.moppahtech.locadora.service;
 
-import java.util.List;
-import java.util.Objects;
-
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
-
-import at.favre.lib.crypto.bcrypt.BCrypt;
-import br.com.moppahtech.locadora.model.UserModel;
+import br.com.moppahtech.locadora.model.entities.UserModel;
 import br.com.moppahtech.locadora.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
-@Service
-@RequiredArgsConstructor
+import java.util.List;
+import java.util.UUID;
+
+@Component
 public class UserService {
 
-    private final UserRepository repository;
+    @Autowired
+    UserRepository userRepository;
 
-    public UserModel createUser(@NotNull UserModel userModel){
-        UserModel model = repository.findByUsername(userModel.getUsername());
-        if(Objects.nonNull(model)){
-            throw new RuntimeException("Usuario ja cadastrado.");
-        }
-        userModel.setPassword(encriptPassWord(userModel.getPassword()));
-        return repository.save(userModel);
+    public ResponseEntity<?> listUsers(){
+      return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
 
-    @Contract("_ -> new")
-    private @NotNull String encriptPassWord(@NotNull String password) {
-        return BCrypt.withDefaults().hashToString(12, password.toCharArray());
+    public ResponseEntity<?> findUserById(UUID id){
+        return new ResponseEntity<>(userRepository.findById(id),HttpStatus.FOUND);
     }
 
-    public List<UserModel> getUsers() {
-        return repository.findAll();
+    public ResponseEntity<?> updateUser(UserModel userModel){
+                return new ResponseEntity<>(userRepository.save(userModel),HttpStatus.OK);
     }
+
+    public ResponseEntity<?> deleteUser(UUID id){
+      userRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+    public ResponseEntity<?> createUser(UserModel userModel){
+        return new ResponseEntity<>(userRepository.save(userModel), HttpStatus.CREATED);
+    }
+
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -16,12 +15,12 @@ public class ClientControler {
 
     @GetMapping("/client")
     public ResponseEntity<?> listaCliente(){
-        return clientService.lisClient();
+        return clientService.listClient();
     }
 
     @GetMapping("/client/{id}")
     public ResponseEntity<?> buscaClientePorId(@PathVariable UUID id){
-        return clientService.getClientById(id);
+        return clientService.findClientById(id);
     }
 
     @PutMapping("/client")

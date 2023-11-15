@@ -15,11 +15,11 @@ public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-    public ResponseEntity<?> lisClient(){
+    public ResponseEntity<?> listClient(){
         return new ResponseEntity<>(clientRepository.findAll(), HttpStatus.OK);
     }
 
-    public ResponseEntity<?> getClientById(UUID id){
+    public ResponseEntity<?> findClientById(UUID id){
         return new ResponseEntity<>(clientRepository.findById(id), HttpStatus.FOUND);
     }
 

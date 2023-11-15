@@ -1,15 +1,10 @@
 package br.com.moppahtech.locadora.repository;
-
-import java.util.UUID;
-
+import br.com.moppahtech.locadora.model.entities.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.moppahtech.locadora.model.UserModel;
+import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserModel, UUID>{
-
-    UserModel findByUsername(String username);
-    
+public interface UserRepository extends JpaRepository<UserModel, UUID> {
 }

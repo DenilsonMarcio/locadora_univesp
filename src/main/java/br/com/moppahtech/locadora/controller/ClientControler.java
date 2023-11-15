@@ -34,7 +34,6 @@ public class ClientControler {
 
     }
 
-
     @PostMapping("/client")
     public ResponseEntity<?> cadastraCliente(@RequestBody ClientModel clientModel){
         return clientService.createClient(clientModel);

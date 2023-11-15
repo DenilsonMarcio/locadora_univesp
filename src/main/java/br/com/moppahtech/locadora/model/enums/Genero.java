@@ -1,4 +1,4 @@
-package br.com.moppahtech.locadora.enums;
+package br.com.moppahtech.locadora.model.enums;
 
 public enum Genero {
     ACAO("Ação"),

@@ -1,6 +1,6 @@
 package br.com.moppahtech.locadora.model.enums;
 
-public enum Preco {
+public enum TipoPreco {
     AMARELO(3.00),
     AZUL(4.00),
     VERDE(6.00),
@@ -8,7 +8,7 @@ public enum Preco {
     DOURADO(15.00);
 
     private double valor;
-    Preco(Double valor){
+    TipoPreco(Double valor){
         this.valor = valor;
     }
 

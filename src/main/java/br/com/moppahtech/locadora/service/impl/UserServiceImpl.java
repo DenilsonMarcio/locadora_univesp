@@ -2,37 +2,43 @@ package br.com.moppahtech.locadora.service.impl;
 
 import br.com.moppahtech.locadora.model.entities.UserModel;
 import br.com.moppahtech.locadora.repository.UserRepository;
+import br.com.moppahtech.locadora.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Component
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;
 
-    public ResponseEntity<?> listUsers(){
-      return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
+    public List<UserModel> listUsers(){
+      return userRepository.findAll();
     }
 
-    public ResponseEntity<?> findUserById(UUID id){
-        return new ResponseEntity<>(userRepository.findById(id),HttpStatus.FOUND);
+
+    public Optional<UserModel> findUserById(UUID id){
+        return userRepository.findById(id);
     }
 
-    public ResponseEntity<?> updateUser(UserModel userModel){
-                return new ResponseEntity<>(userRepository.save(userModel),HttpStatus.OK);
+
+
+    public UserModel upDateUser(UserModel userModel){
+                return userRepository.save(userModel);
     }
 
-    public ResponseEntity<?> deleteUser(UUID id){
+    public void deleteUser(UUID id){
       userRepository.deleteById(id);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
-    public ResponseEntity<?> createUser(UserModel userModel){
-        return new ResponseEntity<>(userRepository.save(userModel), HttpStatus.CREATED);
+
+    public UserModel createUser(UserModel userModel){
+        return userRepository.save(userModel);
     }
 
 }

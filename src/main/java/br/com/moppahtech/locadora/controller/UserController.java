@@ -1,11 +1,15 @@
 package br.com.moppahtech.locadora.controller;
 
 import br.com.moppahtech.locadora.model.entities.UserModel;
+import br.com.moppahtech.locadora.service.UserService;
 import br.com.moppahtech.locadora.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -13,31 +17,31 @@ import java.util.UUID;
 public class UserController {
 
     @Autowired
-    UserServiceImpl userServiceImpl;
+    UserService userService;
 
     @GetMapping("/user")
-    public ResponseEntity<?> listaUsuarios(){
-        return userServiceImpl.listUsers();
+    public ResponseEntity<List<UserModel>> listaUsuarios(){
+        return ResponseEntity.status(HttpStatus.OK).body(userService.listUsers());
     }
     @GetMapping("/user/{id}")
-    public ResponseEntity<?> buscaUsuarioPorId(@PathVariable UUID id){
-        return userServiceImpl.findUserById(id);
+    public ResponseEntity<Optional<UserModel>> buscaUsuarioPorId(@PathVariable UUID id){
+        return ResponseEntity.status(HttpStatus.OK).body(userService.findUserById(id));
     }
 
     @PutMapping("/user")
-    public  ResponseEntity<?> alteraUsuario(@RequestBody UserModel userModel){
-        return userServiceImpl.updateUser(userModel);
+    public  ResponseEntity<UserModel> alteraUsuario(@RequestBody UserModel userModel){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(userService.upDateUser(userModel));
     }
 
     @DeleteMapping("/user/{id}")
-    public ResponseEntity<?> excluiUsuario(@PathVariable UUID id){
-
-        return userServiceImpl.deleteUser(id);
+    public ResponseEntity<Void> excluiUsuario(@PathVariable UUID id){
+        userService.deleteUser(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PostMapping("/user")
-    public ResponseEntity<?> cadastraUsuario(@RequestBody UserModel userModel){
-        return userServiceImpl.createUser(userModel);
+    public ResponseEntity<UserModel> cadastraUsuario(@RequestBody UserModel userModel){
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(userModel));
     }
 
 

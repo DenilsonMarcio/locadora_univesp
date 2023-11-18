@@ -1,41 +1,22 @@
 package br.com.moppahtech.locadora.service;
 
 import br.com.moppahtech.locadora.model.entities.ClientModel;
-import br.com.moppahtech.locadora.repository.ClientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
-@Component
-public class ClientService {
+public interface ClientService {
 
-    @Autowired
-    private ClientRepository clientRepository;
+    List<ClientModel> listClient();
+    Optional<ClientModel> findClientById(UUID id);
+    ClientModel upDateClient(ClientModel clientModel);
+    void deleteClient(UUID id);
+    ClientModel createClient(ClientModel clientModel);
 
-    public ResponseEntity<?> listClient(){
-        return new ResponseEntity<>(clientRepository.findAll(), HttpStatus.OK);
-    }
 
-    public ResponseEntity<?> findClientById(UUID id){
-        return new ResponseEntity<>(clientRepository.findById(id), HttpStatus.FOUND);
-    }
-
-    public ResponseEntity<?> upDateClient(ClientModel clientModel){
-        return new ResponseEntity<>(clientRepository.save(clientModel),HttpStatus.OK);
-    }
-
-    public ResponseEntity<?> createClient(ClientModel clientModel){
-
-        return new ResponseEntity<>(clientRepository.save(clientModel), HttpStatus.CREATED) ;
-    }
-
-    public ResponseEntity<?> deleteClient(UUID id){
-        clientRepository.deleteById(id);
-       return new ResponseEntity<>(HttpStatus.ACCEPTED);
-
-    }
 
 }

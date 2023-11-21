@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
     public List<UserModel> listUsers(){
       return userRepository.findAll();
+
     }
 
 

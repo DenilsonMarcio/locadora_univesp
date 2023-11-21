@@ -1,5 +1,6 @@
 package br.com.moppahtech.locadora.service.impl;
 
+import br.com.moppahtech.locadora.exceptions.NotFoundException;
 import br.com.moppahtech.locadora.model.entities.UserModel;
 import br.com.moppahtech.locadora.repository.UserRepository;
 import br.com.moppahtech.locadora.service.UserService;
@@ -20,10 +21,14 @@ public class UserServiceImpl implements UserService {
 
     public List<UserModel> listUsers(){
       return userRepository.findAll();
+
     }
 
 
     public Optional<UserModel> findUserById(UUID id){
+        if (userRepository.findById(id).isEmpty()){
+            throw new NotFoundException("Usuário não encontrado");
+        }
         return userRepository.findById(id);
     }
 
@@ -34,11 +39,16 @@ public class UserServiceImpl implements UserService {
     }
 
     public void deleteUser(UUID id){
+     if (userRepository.findById(id).isEmpty()){
+         throw new NotFoundException("Usuário não encontrado");
+     }
       userRepository.deleteById(id);
     }
 
     public UserModel createUser(UserModel userModel){
         return userRepository.save(userModel);
     }
+
+
 
 }

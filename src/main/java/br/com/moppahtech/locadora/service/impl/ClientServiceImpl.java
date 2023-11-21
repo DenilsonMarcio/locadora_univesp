@@ -1,5 +1,6 @@
 package br.com.moppahtech.locadora.service.impl;
 
+import br.com.moppahtech.locadora.exceptions.NotFoundException;
 import br.com.moppahtech.locadora.model.entities.ClientModel;
 import br.com.moppahtech.locadora.repository.ClientRepository;
 import br.com.moppahtech.locadora.service.ClientService;
@@ -23,6 +24,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     public Optional<ClientModel> findClientById(UUID id){
+        if (clientRepository.findById(id).isEmpty()){
+          throw new NotFoundException("Cliente não encontrado");
+        }
         return clientRepository.findById(id);
     }
 
@@ -36,6 +40,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     public void deleteClient(UUID id){
+        if (clientRepository.findById(id).isEmpty()){
+            throw new NotFoundException("Cliente não encontrado");
+        }
         clientRepository.deleteById(id);
     }
 

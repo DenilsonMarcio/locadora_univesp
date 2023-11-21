@@ -36,7 +36,7 @@ public class FilmeController {
     }
 
     @PutMapping("/filme")
-    public ResponseEntity<FilmeModel> atualizarJogo(@RequestBody FilmeModel model) throws BusinessException {
+    public ResponseEntity<FilmeModel> atualizarJogo(@RequestBody FilmeModel model) {
         FilmeModel filme = filmeService.atualizarFilme(model);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(filme);
     }

@@ -1,6 +1,5 @@
 package br.com.moppahtech.locadora.controller;
 
-import br.com.moppahtech.locadora.exceptions.BusinessException;
 import br.com.moppahtech.locadora.model.entities.JogoModel;
 import br.com.moppahtech.locadora.service.JogoService;
 import lombok.RequiredArgsConstructor;
@@ -36,7 +35,7 @@ public class JogoController {
     }
 
     @PutMapping("/jogo")
-    public ResponseEntity<JogoModel> atualizarJogo(@RequestBody JogoModel model) throws BusinessException {
+    public ResponseEntity<JogoModel> atualizarJogo(@RequestBody JogoModel model) {
         JogoModel jogo = jogoService.atualizarJogo(model);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(jogo);
     }

@@ -7,7 +7,6 @@ import br.com.moppahtech.locadora.repository.FilmeRepository;
 import br.com.moppahtech.locadora.service.FilmeService;
 import br.com.moppahtech.locadora.utils.GenerateUUID;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,7 +51,6 @@ public class FilmeServiceImpl implements FilmeService {
         }
         filmeRepository.delete(filmeModelOptional.get());
     }
-    @SneakyThrows
     private FilmeModel generatedJogoModel(FilmeModel model) {
         try {
             FilmeModel filmeModel = filmeRepository.findById(model.getId()).get();

@@ -47,10 +47,10 @@ public class JogoServiceImpl implements JogoService {
     }
 
     @Override
-    public JogoModel atualizarJogo(JogoModel model) throws BusinessException {
+    public JogoModel atualizarJogo(JogoModel model) {
         return jogoRepository.save(generatedJogoModel(model));
     }
-    private JogoModel generatedJogoModel(JogoModel model) throws BusinessException {
+    private JogoModel generatedJogoModel(JogoModel model) {
         try {
             JogoModel jogoModel = jogoRepository.findById(model.getId()).get();
             jogoModel.setId(model.getId());

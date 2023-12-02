@@ -3,9 +3,11 @@ package br.com.moppahtech.locadora.model.entities;
 import br.com.moppahtech.locadora.model.PersonModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Builder;
 
 import java.util.UUID;
 
+@Builder
 @Entity
 @Table(name= "tb_user")
 public class UserModel extends PersonModel {

@@ -2,7 +2,6 @@ package br.com.moppahtech.locadora.controller;
 
 import br.com.moppahtech.locadora.model.entities.UserModel;
 import br.com.moppahtech.locadora.service.UserService;
-import br.com.moppahtech.locadora.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class UserController {
 
     @Autowired

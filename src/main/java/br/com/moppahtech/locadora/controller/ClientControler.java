@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-//@CrossOrigin("*")
+@CrossOrigin("*")
 public class ClientControler {
 
     @Autowired

@@ -1,3 +1,4 @@
+/*
 package br.com.moppahtech.locadora.auth;
 
 import br.com.moppahtech.locadora.model.entities.UserModel;
@@ -22,19 +23,26 @@ public class Authorization extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authorization = request.getHeader("Authorization");
-        String token = authorization.substring("Basic".length()).trim();
-        byte[] authDecode = Base64.getDecoder().decode(token);
-        String authString = new String(authDecode);
-        String[] credentials = authString.split(":");
-        String login = credentials[0];
-        String password = credentials[1];
 
-        UserModel user = userRepository.findByLoginAndPassword(login, password);
+        if (authorization != null && authorization.startsWith("Basic")) {
+            String token = authorization.substring("Basic".length()).trim();
+            byte[] authDecode = Base64.getDecoder().decode(token);
+            String authString = new String(authDecode);
+            String[] credentials = authString.split(":");
+            String login = credentials[0];
+            String password = credentials[1];
 
-        if (Objects.isNull(user)){
+            UserModel user = userRepository.findByLoginAndPassword(login, password);
+
+            if (Objects.isNull(user)){
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            } else {
+                filterChain.doFilter(request, response);
+            }
+        } else {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        }else {
-            filterChain.doFilter(request, response);
         }
+
     }
 }
+*/

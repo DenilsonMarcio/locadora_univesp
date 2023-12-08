@@ -22,6 +22,12 @@ INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Enzo Gabriel', '
 INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Cristina Araujo', 'Avenida Cel. Jose Julio, 647', 8);
 
 
-
-
+INSERT INTO tb_filme VALUES (12, 1980, 2.00, 1, 'Randal Kleiser', 'romance', UUID(), 'inglês', 'A Lagoa Azul', 'Warner');
+INSERT INTO tb_filme VALUES (12, 1989, 3.00, 1, 'Joan Silver', 'comédia', UUID(), 'inglês', 'Loverboy: o garoto de programa', 'Warner');
+INSERT INTO tb_filme VALUES (12, 1990, 4.00, 1 , 'Jerry Zucker', 'romance', UUID(), 'português', 'Ghost - Do outro lado da vida', 'Paramount');
+INSERT INTO tb_filme VALUES (00, 1981, 3.00, 2, 'J.B.Tanko', 'comédia', UUID(), 'português', 'Os Saltimbancos Trapalhões','Warner');
+INSERT INTO tb_filme VALUES (14, 1984, 2.00, 1, 'Hugh Wilson', 'ficção policial', UUID(), 'inglês', 'Loucademia de Polícia', 'Paramount');
+INSERT INTO tb_filme VALUES (12, 1993, 3.00, 2, 'Colin Trevorrow', 'ficção', UUID(), 'português', 'Jurassic PArk 1', 'Warner');
+INSERT INTO tb_filme VALUES (12, 1998, 4.00, 1, 'Michael Bay', 'drama', UUID(), 'inglês', 'Armageddon', 'Warner');
+INSERT INTO tb_filme VALUES (14, 1975, 2.00, 2, 'Steven Spielberg', 'suspense', UUID(), 'português', 'Tubarão', 'Paramount');
 

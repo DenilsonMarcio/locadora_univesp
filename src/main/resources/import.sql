@@ -31,3 +31,7 @@ INSERT INTO tb_filme VALUES (12, 1993, 3.00, 2, 'Colin Trevorrow', 'ficção', U
 INSERT INTO tb_filme VALUES (12, 1998, 4.00, 1, 'Michael Bay', 'drama', UUID(), 'inglês', 'Armageddon', 'Warner');
 INSERT INTO tb_filme VALUES (14, 1975, 2.00, 2, 'Steven Spielberg', 'suspense', UUID(), 'português', 'Tubarão', 'Paramount');
 
+-- insert tb_jogo
+INSERT INTO tb_jogo (id, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 'Sonic Generations', 0, 2011, 'SEGA', 'Aventura', 5, 4.00, 'PLAYSTATION');
+INSERT INTO tb_jogo (id, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 'Minecraft', 10, 2011, 'Mojang Studios', 'Aventura', 3, 6.00, 'PLAYSTATION');
+INSERT INTO tb_jogo (id, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 'Mario 64', 0, 1996, 'Nintendo Entertainment', 'Aventura', 3, 6.00, 'NINTENDO_64');

@@ -8,19 +8,18 @@ INSERT INTO tb_user (id, name, address, age, login, password) VALUES (UUID(), 'A
 -- INSERT INTO tb_user (id, name, address, age, login, password) VALUES (UUID(), 'guta@gmail.com', 'Rua Barao de Casa Branca, 654', 4, 'Augusta Ronqui', '456456');
 
 -- insert para tb_client
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Alice Johnson', '123 Main St', 30);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Bob Smith', '456 Oak St', 25);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Charlie Brown', '789 Pine St', 40);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Enzo Smith', '456 Oak St', 15);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Karen Boscolo', 'Rua Lacerda Franco,320', 1);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Maiara Santos', 'Rua Francisco Arruda, 390', 2);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Juliana Boscolo', 'Rua Inhambu, 474', 3);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Ana Boscolo', 'Rua Santos Dumont, 33', 4);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Marcos Souza', 'Rua Mariquinha Lameira, 571', 5);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Norfan Gandalf', 'Rua das Orquideas, 22', 6);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Enzo Gabriel', 'Rua das Paineiras, 526', 7);
-INSERT INTO tb_client (id, name, address, age) VALUES (UUID(), 'Cristina Araujo', 'Avenida Cel. Jose Julio, 647', 8);
-
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0001, 'Alice Johnson', '123 Main St', 30);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0002, 'Charlie Brown', '789 Pine St', 40);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0003, 'Enzo Smith', '456 Oak St', 15);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0004, 'Karen Boscolo', 'Rua Lacerda Franco,320', 1);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0005, 'Maiara Santos', 'Rua Francisco Arruda, 390', 2);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0006, 'Juliana Boscolo', 'Rua Inhambu, 474', 3);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0007, 'Ana Boscolo', 'Rua Santos Dumont, 33', 4);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0008, 'Marcos Souza', 'Rua Mariquinha Lameira, 571', 5);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0009, 'Norfan Gandalf', 'Rua das Orquideas, 22', 6);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0010, 'Enzo Gabriel', 'Rua das Paineiras, 526', 7);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0011, 'Cristina Araujo', 'Avenida Cel. Jose Julio, 647', 8);
+INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0012, 'Bob Smith', '456 Oak St', 25);
 
 INSERT INTO tb_filme VALUES (12, 0001, 1980, 2.00, 1, 'Randal Kleiser', 'romance', UUID(), 'inglês', 'A Lagoa Azul', 'Warner');
 INSERT INTO tb_filme VALUES (12, 0002, 1989, 3.00, 1, 'Joan Silver', 'comédia', UUID(), 'inglês', 'Loverboy: o garoto de programa', 'Warner');

@@ -45,5 +45,10 @@ public class ClientControler {
         return ResponseEntity.status(HttpStatus.CREATED).body(clientService.createClient(clientModel));
     }
 
+    @GetMapping("/client_by_name/{name}")
+    public List<ClientModel> buscaClientesPorName(@PathVariable String name){
+        return clientService.findClientByName(name);
+    }
+
 
 }

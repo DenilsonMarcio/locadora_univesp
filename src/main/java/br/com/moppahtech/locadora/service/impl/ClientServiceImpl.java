@@ -39,6 +39,11 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.save(clientModel);
     }
 
+    @Override
+    public List<ClientModel> findClientByName(String name) {
+        return clientRepository.findClientByName(name);
+    }
+
     public void deleteClient(UUID id){
         if (clientRepository.findById(id).isEmpty()){
             throw new NotFoundException("Cliente não encontrado");

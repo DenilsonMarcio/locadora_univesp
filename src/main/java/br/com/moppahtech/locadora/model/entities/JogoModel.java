@@ -16,6 +16,7 @@ public class JogoModel{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    private Integer codigo;
     private String name;
     private Integer classificacao;
     private Integer lancamento;

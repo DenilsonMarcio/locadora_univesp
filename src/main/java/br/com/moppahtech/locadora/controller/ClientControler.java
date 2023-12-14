@@ -2,6 +2,9 @@ package br.com.moppahtech.locadora.controller;
 
 import br.com.moppahtech.locadora.model.entities.ClientModel;
 import br.com.moppahtech.locadora.service.ClientService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +22,11 @@ public class ClientControler {
     ClientService clientService;
 
     @GetMapping("/client")
+    @Operation(summary = "Obter uma lista de clientes")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Lista de Clientes obtida com sucesso"),
+            @ApiResponse(responseCode = "404", description = "Lista não encontrada")
+    })
     public ResponseEntity<List<ClientModel>> listaCliente(){
         return  ResponseEntity.status(HttpStatus.OK).body(clientService.listClient());
     }

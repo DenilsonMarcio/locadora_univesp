@@ -13,15 +13,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static java.util.Objects.nonNull;
 
 @Service
 @RequiredArgsConstructor
 public class ProdutoServiceImpl implements ProdutoService {
-
-    private static final Integer SOMA_UM = 1;
-    private static final String PLATAFORMA_DEFAULT = TipoPlataforma.NINTENDO_64.getPlataforma();
+    private static final String PLATAFORMA_DEFAULT = "PLATAFORMA_DEFAULT";
 
     private final JogoRepository jogoRepository;
     private final FilmeRepository filmeRepository;
@@ -65,19 +64,45 @@ public class ProdutoServiceImpl implements ProdutoService {
             }
         }
     }
-
-
     private String validatedPlataforma(String plataforma) {
-
-        //TODO Validar utilização do Enum de Plataforma
-
-        return (TipoPlataforma.PLAYSTATION.getPlataforma() == plataforma ? TipoPlataforma.PLAYSTATION.getPlataforma() : PLATAFORMA_DEFAULT);
+        switch (plataforma) {
+            case "MEGADRIVE":
+                plataforma = TipoPlataforma.MEGADRIVE.getPlataforma();
+                break;
+            case "SEGA_SATURN":
+                plataforma = TipoPlataforma.SEGA_SATURN.getPlataforma();
+                break;
+            case "PLAYSTATION":
+                plataforma = TipoPlataforma.PLAYSTATION.getPlataforma();
+                break;
+            case "VIRTUAL_BOY":
+                plataforma = TipoPlataforma.VIRTUAL_BOY.getPlataforma();
+                break;
+            case "NINTENDO_64":
+                plataforma = TipoPlataforma.NINTENDO_64.getPlataforma();
+                break;
+            case "SUPER_NINTENDO":
+                plataforma = TipoPlataforma.SUPER_NINTENDO.getPlataforma();
+                break;
+            case "NEO_GEO_POCKET":
+                plataforma = TipoPlataforma.NEO_GEO_POCKET.getPlataforma();
+                break;
+            case "GAME_BOY_COLOR":
+                plataforma = TipoPlataforma.GAME_BOY_COLOR.getPlataforma();
+                break;
+            default:
+                plataforma = PLATAFORMA_DEFAULT;
+        }
+        return plataforma;
     }
 
-    private Integer gerarCodigoJogo() {
-        return jogoRepository.gerarCodigoJogo() + SOMA_UM;
+    private String gerarCodigoJogo() {
+        return "J-".concat(getRandomNumber().toString());
     }
-    private Integer gerarCodigoFilme() {
-        return filmeRepository.gerarCodigoFilme() + SOMA_UM;
+    private String gerarCodigoFilme() {
+        return "F-".concat(getRandomNumber().toString());
+    }
+    private Integer getRandomNumber() {
+        return ThreadLocalRandom.current().nextInt(10000, 100000);
     }
 }

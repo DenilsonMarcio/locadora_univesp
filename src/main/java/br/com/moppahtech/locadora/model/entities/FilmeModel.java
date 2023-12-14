@@ -16,7 +16,9 @@ public class FilmeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private Integer codigo;
+
+    @Column(name = "codigo", nullable = false)
+    private String codigo;
     private String name;
     private Integer classificacao;
     private Integer lancamento;

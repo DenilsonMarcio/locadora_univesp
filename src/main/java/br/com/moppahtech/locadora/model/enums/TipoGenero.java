@@ -1,6 +1,6 @@
-package br.com.moppahtech.locadora.enums;
+package br.com.moppahtech.locadora.model.enums;
 
-public enum Genero {
+public enum TipoGenero {
     ACAO("Ação"),
     AVENTURA("Aventura"),
     CINEMA_DE_ARTE("Cinema de Arte"),
@@ -30,7 +30,7 @@ public enum Genero {
 
     private String descricao;
 
-    Genero(String descricao){
+    TipoGenero(String descricao){
         this.descricao = descricao;
     }
 

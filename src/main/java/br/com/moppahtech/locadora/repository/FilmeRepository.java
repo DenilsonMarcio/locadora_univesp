@@ -1,0 +1,12 @@
+package br.com.moppahtech.locadora.repository;
+
+import br.com.moppahtech.locadora.model.entities.FilmeModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FilmeRepository extends JpaRepository<FilmeModel, String> {
+    @Query(nativeQuery = true, value = "SELECT MAX(CODIGO) FROM TB_FILME")
+    Integer gerarCodigoFilme();
+}

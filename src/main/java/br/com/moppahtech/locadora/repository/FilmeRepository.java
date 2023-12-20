@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FilmeRepository extends JpaRepository<FilmeModel, String> {
-    @Query(nativeQuery = true, value = "SELECT MAX(CODIGO) FROM TB_FILME")
-    Integer gerarCodigoFilme();
+
 }

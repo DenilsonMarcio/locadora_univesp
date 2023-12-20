@@ -21,16 +21,16 @@ INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0010, 
 INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0011, 'Cristina Araujo', 'Avenida Cel. Jose Julio, 647', 8);
 INSERT INTO tb_client (id, matricula, name, address, age) VALUES (UUID(), 0012, 'Bob Smith', '456 Oak St', 25);
 
-INSERT INTO tb_filme VALUES (12, 0001, 1980, 2.00, 1, 'Randal Kleiser', 'romance', UUID(), 'inglês', 'A Lagoa Azul', 'Warner');
-INSERT INTO tb_filme VALUES (12, 0002, 1989, 3.00, 1, 'Joan Silver', 'comédia', UUID(), 'inglês', 'Loverboy: o garoto de programa', 'Warner');
-INSERT INTO tb_filme VALUES (12, 0003, 1990, 4.00, 1 , 'Jerry Zucker', 'romance', UUID(), 'português', 'Ghost - Do outro lado da vida', 'Paramount');
-INSERT INTO tb_filme VALUES (00, 0004, 1981, 3.00, 2, 'J.B.Tanko', 'comédia', UUID(), 'português', 'Os Saltimbancos Trapalhões','Warner');
-INSERT INTO tb_filme VALUES (14, 0005, 1984, 2.00, 1, 'Hugh Wilson', 'ficção policial', UUID(), 'inglês', 'Loucademia de Polícia', 'Paramount');
-INSERT INTO tb_filme VALUES (12, 0006, 1993, 3.00, 2, 'Colin Trevorrow', 'ficção', UUID(), 'português', 'Jurassic PArk 1', 'Warner');
-INSERT INTO tb_filme VALUES (12, 0007, 1998, 4.00, 1, 'Michael Bay', 'drama', UUID(), 'inglês', 'Armageddon', 'Warner');
-INSERT INTO tb_filme VALUES (14, 0008, 1975, 2.00, 2, 'Steven Spielberg', 'suspense', UUID(), 'português', 'Tubarão', 'Paramount');
+INSERT INTO tb_filme VALUES (12, 1980, 2.00, 1, 'F-00001', 'Randal Kleiser', 'romance', UUID(), 'inglês', 'A Lagoa Azul', 'Warner');
+INSERT INTO tb_filme VALUES (12, 1989, 3.00, 1, 'F-00002', 'Joan Silver', 'comédia', UUID(), 'inglês', 'Loverboy: o garoto de programa', 'Warner');
+INSERT INTO tb_filme VALUES (12, 1990, 4.00, 1, 'F-00003', 'Jerry Zucker', 'romance', UUID(), 'português', 'Ghost - Do outro lado da vida', 'Paramount');
+INSERT INTO tb_filme VALUES (00, 1981, 3.00, 2, 'F-00004', 'J.B.Tanko', 'comédia', UUID(), 'português', 'Os Saltimbancos Trapalhões','Warner');
+INSERT INTO tb_filme VALUES (14, 1984, 2.00, 1, 'F-00005', 'Hugh Wilson', 'ficção policial', UUID(), 'inglês', 'Loucademia de Polícia', 'Paramount');
+INSERT INTO tb_filme VALUES (12, 1993, 3.00, 2, 'F-00006', 'Colin Trevorrow', 'ficção', UUID(), 'português', 'Jurassic PArk 1', 'Warner');
+INSERT INTO tb_filme VALUES (12, 1998, 4.00, 1, 'F-00007', 'Michael Bay', 'drama', UUID(), 'inglês', 'Armageddon', 'Warner');
+INSERT INTO tb_filme VALUES (14, 1975, 2.00, 2, 'F-00008', 'Steven Spielberg', 'suspense', UUID(), 'português', 'Tubarão', 'Paramount');
 
 -- insert tb_jogo
-INSERT INTO tb_jogo (id, codigo, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 0001, 'Sonic Generations', 0, 2011, 'SEGA', 'Aventura', 5, 4.00, 'PLAYSTATION');
-INSERT INTO tb_jogo (id, codigo, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 0002, 'Minecraft', 10, 2011, 'Mojang Studios', 'Aventura', 3, 6.00, 'PLAYSTATION');
-INSERT INTO tb_jogo (id, codigo, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 0003, 'Mario 64', 0, 1996, 'Nintendo Entertainment', 'Aventura', 3, 6.00, 'NINTENDO_64');
+INSERT INTO tb_jogo (id, codigo, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 'J-00001', 'Sonic Generations', 0, 2011, 'SEGA', 'Aventura', 5, 4.00, 'PLAYSTATION');
+INSERT INTO tb_jogo (id, codigo, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 'J-00002', 'Minecraft', 10, 2011, 'Mojang Studios', 'Aventura', 3, 6.00, 'PLAYSTATION');
+INSERT INTO tb_jogo (id, codigo, name, classificacao, lancamento, produtora, genero, quantidade, preco, plataforma) VALUES (UUID(), 'J-00003', 'Mario 64', 0, 1996, 'Nintendo Entertainment', 'Aventura', 3, 6.00, 'NINTENDO_64');

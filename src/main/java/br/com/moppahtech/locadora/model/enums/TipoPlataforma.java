@@ -1,25 +1,18 @@
 package br.com.moppahtech.locadora.model.enums;
 
 public enum TipoPlataforma {
-    MEGADRIVE("mega_drive"),
-    SEGA_SATURN("sega_saturn"),
-    PLAYSTATION("playstation"),
-    VIRTUAL_BOY("virtual_boy"),
-    NINTENDO_64("nintendo_64"),
-    SUPER_NINTENDO("super_nintendo"),
-    NEO_GEO_POCKET("neo_geo_pocket"),
-    GAME_BOY_COLOR("game_boy_color");
-
+    MEGADRIVE("MEGADRIVE"),
+    SEGA_SATURN("SEGA_SATURN"),
+    PLAYSTATION("PLAYSTATION"),
+    VIRTUAL_BOY("VIRTUAL_BOY"),
+    NINTENDO_64("NINTENDO_64"),
+    SUPER_NINTENDO("SUPER_NINTENDO"),
+    NEO_GEO_POCKET("NEO_GEO_POCKET"),
+    GAME_BOY_COLOR("GAME_BOY_COLOR");
     private String plataforma;
-
     TipoPlataforma(String plataforma) {this.plataforma = plataforma; }
-
     public String getPlataforma() {
         return plataforma;
     }
-
-
-
-
 
 }

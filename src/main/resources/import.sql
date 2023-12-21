@@ -1,5 +1,5 @@
 -- insert para tb_user
-INSERT INTO tb_user (id, name, address, age, login, password) VALUES (UUID(), 'ADMINISTRADOR', 'RUA HUM, 1000', 21, 'LOCADORA', '$2a$12$rZfKbNSN7z4V6G0wuGlgG.1/fZrL.f88AuZzGx84aRsn9oXE8yjYS');
+INSERT INTO tb_user (id, name, address, age, login, password, matricula) VALUES (UUID(), 'ADMINISTRADOR', 'RUA HUM, 1000', 21, 'LOCADORA', '$2a$12$rZfKbNSN7z4V6G0wuGlgG.1/fZrL.f88AuZzGx84aRsn9oXE8yjYS', 123);
 -- INSERT INTO tb_user (id, name, address, age, login, password) VALUES (UUID(), 'Jane Smith', '456 Oak St', 25, 'jane_smith', 'securepass');
 -- INSERT INTO tb_user (id, name, address, age, login, password) VALUES (UUID(), 'Bob Johnson', '789 Pine St', 40, 'bob_johnson', 'pass123');
 -- INSERT INTO tb_user (id, name, address, age, login, password) VALUES (UUID(), 'joao123@gmail.com', 'Rua Justino de Castro, 333', 1,'João da Silva', '123456');

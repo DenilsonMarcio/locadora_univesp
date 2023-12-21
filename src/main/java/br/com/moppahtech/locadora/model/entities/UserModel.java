@@ -13,17 +13,30 @@ import java.util.UUID;
 public class UserModel extends PersonModel {
     private String login;
     private String password;
+    private Integer matricula;
+
     public UserModel() {
     }
+
+    public UserModel(String login, String password, Integer matricula) {
+        this.login = login;
+        this.password = password;
+        this.matricula = matricula;
+    }
+
+    public UserModel(UUID id, String name, String address, Integer age, String login, String password, Integer matricula) {
+        super(id, name, address, age);
+        this.login = login;
+        this.password = password;
+        this.matricula = matricula;
+    }
+
     public UserModel(String login, String password) {
         this.login = login;
         this.password = password;
     }
-    public UserModel(UUID id, String name, String address, Integer age, String login, String password) {
-        super(id, name, address, age);
-        this.login = login;
-        this.password = password;
-    }
+
+
     public String getLogin() {
         return login;
     }
@@ -36,4 +49,7 @@ public class UserModel extends PersonModel {
     public void setPassword(String password) {
         this.password = password;
     }
+    public Integer getMatricula() {return matricula; }
+
+    public void setMatricula(Integer matricula) {this.matricula = matricula; }
 }

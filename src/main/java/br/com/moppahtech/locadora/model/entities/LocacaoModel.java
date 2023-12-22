@@ -1,12 +1,14 @@
 package br.com.moppahtech.locadora.model.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_locacao")
@@ -87,4 +89,24 @@ public class LocacaoModel
 	{
         this.precoTotal = precoTotal;
     }
+
+    @Transient
+    private List<LocacaoJogoModel> listJogos;
+    public List<LocacaoJogoModel> getListJogos() {
+        return listJogos;
+    }
+    public void setListJogos(List<LocacaoJogoModel> listJogos) {
+        this.listJogos = listJogos;
+    }
+
+    @Transient
+    private List<LocacaoFilmeModel> listFilmes;
+    public List<LocacaoFilmeModel> getListFilmes() {
+        return listFilmes;
+    }
+
+    public void setListFilmes(List<LocacaoFilmeModel> listFilmes) {
+        this.listFilmes = listFilmes;
+    }
+
 }

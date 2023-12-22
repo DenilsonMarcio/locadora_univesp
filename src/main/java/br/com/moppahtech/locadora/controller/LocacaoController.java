@@ -47,7 +47,7 @@ public class LocacaoController
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(locacao);
     }
 
-    @DeleteMapping("/locacao")
+    @DeleteMapping("/locacao/{id}")
     public ResponseEntity<Void> removerLocacao(@PathVariable String id)
     {
         locacaoService.removerLocacao(id);

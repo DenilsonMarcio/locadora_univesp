@@ -1,24 +1,15 @@
-package br.com.moppahtech.locadora.model.entities;
+package br.com.moppahtech.locadora.model.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "tb_jogo")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class JogoModel{
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-
-    @Column(name = "codigo", nullable = false)
-    private String codigo;
+public class FilmeDTO {
     private String name;
     private Integer classificacao;
     private Integer lancamento;
@@ -26,5 +17,6 @@ public class JogoModel{
     private String genero;
     private Integer quantidade;
     private Double preco;
-    private String plataforma;
+    private String idioma;
+    private String diretor;
 }

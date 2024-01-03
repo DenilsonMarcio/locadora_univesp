@@ -1,5 +1,6 @@
 package br.com.moppahtech.locadora.controller;
 
+import br.com.moppahtech.locadora.model.dto.ClientDto;
 import br.com.moppahtech.locadora.model.entities.ClientModel;
 import br.com.moppahtech.locadora.service.ClientService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -49,8 +50,8 @@ public class ClientControler {
     }
 
     @PostMapping("/client")
-    public ResponseEntity<ClientModel> cadastraCliente(@RequestBody ClientModel clientModel){
-        return ResponseEntity.status(HttpStatus.CREATED).body(clientService.createClient(clientModel));
+    public ResponseEntity<ClientModel> cadastraCliente(@RequestBody ClientDto clientDto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(clientService.createClient(clientDto));
     }
 
     @GetMapping("/client_by_name/{name}")

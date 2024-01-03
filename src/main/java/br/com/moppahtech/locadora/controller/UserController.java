@@ -1,5 +1,6 @@
 package br.com.moppahtech.locadora.controller;
 
+import br.com.moppahtech.locadora.model.dto.UserDTO;
 import br.com.moppahtech.locadora.model.entities.UserModel;
 import br.com.moppahtech.locadora.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +20,16 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/user")
-    public ResponseEntity<List<UserModel>> listaUsuarios(){
+    public ResponseEntity<List<UserDTO>> listaUsuarios(){
         return ResponseEntity.status(HttpStatus.OK).body(userService.listUsers());
     }
     @GetMapping("/user/{id}")
-    public ResponseEntity<Optional<UserModel>> buscaUsuarioPorId(@PathVariable UUID id){
+    public ResponseEntity<Optional<UserDTO>> buscaUsuarioPorId(@PathVariable UUID id){
         return ResponseEntity.status(HttpStatus.OK).body(userService.findUserById(id));
     }
 
     @PutMapping("/user")
-    public  ResponseEntity<UserModel> alteraUsuario(@RequestBody UserModel userModel){
+    public  ResponseEntity<UserDTO> alteraUsuario(@RequestBody UserModel userModel){
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userService.upDateUser(userModel));
     }
 
@@ -39,7 +40,7 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public ResponseEntity<UserModel> cadastraUsuario(@RequestBody UserModel userModel){
+    public ResponseEntity<UserDTO> cadastraUsuario(@RequestBody UserModel userModel){
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(userModel));
     }
 

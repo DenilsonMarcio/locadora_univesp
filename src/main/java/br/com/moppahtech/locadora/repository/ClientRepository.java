@@ -12,4 +12,7 @@ import java.util.UUID;
 public interface ClientRepository extends JpaRepository<ClientModel, UUID> {
     @Query(nativeQuery = true, value = "SELECT * FROM TB_CLIENT WHERE NAME LIKE %:name%")
     List<ClientModel> findClientByName(String name);
+
+    @Query(nativeQuery = true, value = "SELECT MAX(MATRICULA) FROM TB_CLIENT")
+    Integer gerarMatriculaCliente();
 }

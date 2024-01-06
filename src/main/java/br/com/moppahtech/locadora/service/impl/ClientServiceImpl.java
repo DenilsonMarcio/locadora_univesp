@@ -1,6 +1,7 @@
 package br.com.moppahtech.locadora.service.impl;
 
 import br.com.moppahtech.locadora.exceptions.NotFoundException;
+import br.com.moppahtech.locadora.model.dto.ClientDto;
 import br.com.moppahtech.locadora.model.entities.ClientModel;
 import br.com.moppahtech.locadora.repository.ClientRepository;
 import br.com.moppahtech.locadora.service.ClientService;
@@ -34,9 +35,22 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.save(clientModel);
     }
 
-    public ClientModel createClient(ClientModel clientModel){
+    public ClientModel createClient(ClientDto clientDto){
+
+        ClientModel clientModel= new ClientModel();
+
+        clientModel.setAge(clientDto.getAge());
+        clientModel.setAddress(clientDto.getAddress());
+        clientModel.setName(clientDto.getName());
+
+        clientModel.setMatricula(gerarMatriculaCliente());
 
         return clientRepository.save(clientModel);
+    }
+
+    private Integer gerarMatriculaCliente() {
+
+        return clientRepository.gerarMatriculaCliente()+1;
     }
 
     @Override
